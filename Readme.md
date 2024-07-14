@@ -10,6 +10,10 @@ Cypress automation tests for the following scenarios:
 
 Trello REST API is used to create and delete boards, create and archive lists in order to bring the system to the necessary state for each test suite.
 
+### Test Report
+
+![test_report](./test_report.png)
+
 ### How to run
 
 1. Create `cypress.env.json` as per the sample file (email and password for Trello, API key and token for Trello REST API)

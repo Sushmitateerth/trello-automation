@@ -10,7 +10,7 @@ describe('Login', function () {
 
   it('LoginCreds', function () {
     const loginPage = new LoginPage()
-    loginPage.getAcceptCookies().click()
+    // loginPage.getAcceptCookies().click()
     loginPage.getLoginButtonClick().click()
 
     cy.origin('https://id.atlassian.com', () => {
@@ -19,8 +19,8 @@ describe('Login', function () {
       const loginPage = new _LoginPage()
       loginPage.getUsername().type(Cypress.env('email'))
       loginPage.getLoginSubmitButton().should('not.be.disabled').click()
-      loginPage.getPassword().this.data.defaultCommandTimeout().type(Cypress.env('password'))
-      loginPage.getLoginSubmitButton().click()
+      loginPage.getPassword().type(Cypress.env('password'), { force: true }).should('be.visible')
+      loginPage.getLoginSubmitButton().should('not.be.disabled').click()
     })
   })
 })

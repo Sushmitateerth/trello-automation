@@ -6,20 +6,17 @@ describe('List Operations', function () {
   let board = null
   const name = 'Automation board for List'
 
-  before(async function () {
+  before(function () {
     cy.LoginSuccessfully(Cypress.env('email'), Cypress.env('password'))
+    cy.fixture('example').then(function (data) {
+      this.data = data
+    })
 
     return createBoard(name).then((res) => {
       board = res.body
-      fetchLists(board.id).then(({ body: lists }) => {
+      return fetchLists(board.id).then(({ body: lists }) => {
         return Promise.all(lists.map((list) => archiveList(list.id)))
       })
-    })
-  })
-
-  beforeEach(function () {
-    cy.fixture('example').then(function (data) {
-      this.data = data
     })
   })
 
