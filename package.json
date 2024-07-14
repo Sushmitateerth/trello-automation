@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "cypress": "cypress open",
+    "cypress:ci": "cypress run",
     "clean:boards": "node ./scripts/cleanupBoards",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
