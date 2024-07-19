@@ -18,7 +18,5 @@ jobs:
           CYPRESS_password: ${{ secrets.password }}
           CYPRESS_token: ${{ secrets.token }}
           CYPRESS_url: ${{ secrets.url }}
-          
-          
         
       
