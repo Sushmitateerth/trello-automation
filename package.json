@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cypress": "cypress open",
-    "cypress:ci": "cypress run",
-    "clean:boards": "node ./scripts/cleanupBoards",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress run",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:record": "cypress run --record --key",
+    "clean:boards": "node ./scripts/cleanupBoards"
   },
   "author": "",
   "license": "ISC",
