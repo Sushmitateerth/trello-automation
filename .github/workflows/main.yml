@@ -13,11 +13,11 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         env:
-          CYPRESS_email: ${{secrets.EMAIL}}
-          CYPRESS_key: ${{secrets.KEY}}
-          CYPRESS_password: ${{secrets.PASSWORD}}
-          CYPRESS_token: ${{secrets.TOKEN}}
-          CYPRESS_url: ${{secrets.URL}}
+          CYPRESS_email: ${{ secrets.email }}
+          CYPRESS_key: ${{ secrets.key }}
+          CYPRESS_password: ${{ secrets.password }}
+          CYPRESS_token: ${{ secrets.token }}
+          CYPRESS_url: ${{ secrets.url }}
           
         
       
