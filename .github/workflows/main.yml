@@ -12,4 +12,12 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v6
+        env:
+          EMAIL_SECRET: ${{secrets.EMAIL}}
+          KEY_SECRET: ${{secrets.KEY}}
+          PASSWORD_SECRET: ${{secrets.PASSWORD}}
+          TOKEN_SECRET: ${{secrets.TOKEN}}
+          URL_SECRET: ${{secrets.URL}}
+          
+        
       
