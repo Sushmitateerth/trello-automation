@@ -1,4 +1,4 @@
-# Cypress Automation
+# Cypress Automation  [![Cypress Tests](https://github.com/Sushmitateerth/trello-automation/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/Sushmitateerth/trello-automation/actions/workflows/main.yml)
 
 Cypress automation tests for the following scenarios:
 
