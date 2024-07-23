@@ -4,7 +4,7 @@ import { fetchLists, archiveList, createList } from '../../../api/list'
 
 describe('Card Operations', function () {
   before(function () {
-    cy.LoginSuccessfully(Cypress.env('email'), Cypress.env('password'))
+    cy.loginSuccessfully()
 
     let board = null
     const boardName = 'Automation Board for Cards'

@@ -1,13 +1,13 @@
 import ListsPage from '../pageObjects/ListsPage'
-import { createBoard, deleteBoard } from '../../../api/board'
+import { Board, createBoard } from '../../../api/board'
 import { fetchLists, archiveList } from '../../../api/list'
 
 describe('List Operations', function () {
-  let board = null
+  let board: Board
   const name = 'Automation board for List'
 
   before(function () {
-    cy.LoginSuccessfully(Cypress.env('email'), Cypress.env('password'))
+    cy.loginSuccessfully()
     cy.fixture('example').then(function (data) {
       this.data = data
     })

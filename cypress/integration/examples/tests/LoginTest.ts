@@ -14,7 +14,7 @@ describe('Login', function () {
     loginPage.getLoginButtonClick().click()
 
     cy.origin('https://id.atlassian.com', () => {
-      const _LoginPage = Cypress.require('../pageObjects/LoginPage')
+      const { default: _LoginPage } = Cypress.require('../pageObjects/LoginPage')
 
       const loginPage = new _LoginPage()
       loginPage.getUsername().type(Cypress.env('email'))

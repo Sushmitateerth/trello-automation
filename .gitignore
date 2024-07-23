@@ -1,5 +1,6 @@
 node_modules
 cypress.env.json
 cypress/screenshots
+tsconfig.tsbuildinfo
 
 .DS_Store

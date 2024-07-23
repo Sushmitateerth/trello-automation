@@ -3,7 +3,7 @@ import CreateBoardPage from '../pageObjects/BoardsPage'
 describe('AddBoard', function () {
   before(function () {
     //cy.session()
-    cy.LoginSuccessfully(Cypress.env('email'), Cypress.env('password'))
+    cy.loginSuccessfully()
   })
   beforeEach(function () {
     cy.fixture('example').then(function (data) {
