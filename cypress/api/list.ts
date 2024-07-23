@@ -1,17 +1,21 @@
 import { basePath } from '../constants/api'
 import { apiKey, apiToken } from '../constants/env'
 
-export function fetchLists(id) {
+type List = {
+  id: string
+}
+
+export function fetchLists(id: string) {
   const url = `${basePath}/boards/${id}/lists?key=${apiKey}&token=${apiToken}`
-  return cy.request('GET', url).then((res) => console.log(res))
+  return cy.request<List[]>('GET', url)
 }
 
-export function archiveList(id) {
+export function archiveList(id: string) {
   const url = `${basePath}/lists/${id}/closed?value=true&key=${apiKey}&token=${apiToken}`
-  return cy.request('PUT', url)
+  return cy.request<List>('PUT', url)
 }
 
-export function createList(name, boardId) {
+export function createList(name: string, boardId: string) {
   const url = `${basePath}/lists?name=${name}&idBoard=${boardId}&key=${apiKey}&token=${apiToken}`
-  return cy.request('POST', url)
+  return cy.request<List>('POST', url)
 }

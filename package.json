@@ -8,11 +8,13 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "cypress:record": "cypress run --record --key",
-    "clean:boards": "node ./scripts/cleanupBoards"
+    "clean:boards": "node ./scripts/cleanupBoards",
+    "tsc": "tsc"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.12.0"
+    "cypress": "^13.12.0",
+    "typescript": "^5.5.3"
   }
 }

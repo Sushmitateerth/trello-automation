@@ -3,7 +3,7 @@ class ListPage {
     return cy.contains('Boards')
   }
 
-  getSelectBoard(boardName) {
+  getSelectBoard(boardName: string) {
     return cy.contains(boardName)
   }
 

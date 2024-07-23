@@ -34,15 +34,16 @@ Cypress.Commands.add('pressEscape', () => {
 Cypress.Commands.add('ifElementExists', (selector, action) => {
   cy.get('body').then(($body) => {
     const element = $body.find(selector)
-    if (element) {
-      element[action]()
+    if (element.length > 0) {
+      const fn = element[action as any] as unknown as VoidFunction
+      fn && fn()
     } else {
       console.log('element not found...')
     }
   })
 })
 
-Cypress.Commands.add('LoginSuccessfully', (email, password) => {
+Cypress.Commands.add('loginSuccessfully', () => {
   cy.visit(Cypress.env('url'))
   const loginPage = new LoginPage()
 
@@ -51,7 +52,7 @@ Cypress.Commands.add('LoginSuccessfully', (email, password) => {
   loginPage.getLoginButtonClick().click()
 
   cy.origin('https://id.atlassian.com', () => {
-    const _LoginPage = Cypress.require('../integration/examples/pageObjects/LoginPage')
+    const { default: _LoginPage } = Cypress.require('../integration/examples/pageObjects/LoginPage')
 
     const loginPage = new _LoginPage()
     loginPage.getUsername().type(Cypress.env('email'))
@@ -60,3 +61,13 @@ Cypress.Commands.add('LoginSuccessfully', (email, password) => {
     loginPage.getLoginSubmitButton().should('not.be.disabled').click()
   })
 })
+
+declare global {
+  namespace Cypress {
+    interface Chainable {
+      pressEscape(): void
+      ifElementExists(selector: string, action: string): void
+      loginSuccessfully(): void
+    }
+  }
+}
